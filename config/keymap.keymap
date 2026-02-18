@@ -1,3 +1,49 @@
+// OS設定を日本語キーボードのまま使用するための変換定義
+
+#define JP_ZKHK  GRAVE        // Zenkaku ↔ Hankaku ↔ Kanji (半角 ↔ 全角 ↔ 漢字)
+#define JP_MINUS MINUS        // -
+#define JP_CARET EQUAL        // ^
+#define JP_YEN   INT3         // ¥
+#define JP_AT    LBKT         // @
+#define JP_LBKT  RBKT         // [
+#define JP_EISU  CAPS         // Eisū (英数)
+#define JP_SEMI  SEMI         // ;
+#define JP_COLON SQT          // :
+#define JP_RBKT  NUHS         // ]
+#define JP_COMMA COMMA        // ,
+#define JP_DOT   DOT          // .
+#define JP_SLASH SLASH        // /
+
+// #define JP_BSLH  INT1      // (backslash)
+
+#define JP_BSLH  LA(INT3)     // \(backslash)
+#define JP_MHEN  INT5         // Muhenkan (無変換)
+#define JP_HENK  INT4         // Henkan (変換)
+#define JP_KANA  INT2         // Katakana ↔ Hiragana ↔ Rōmaji (カタカナ ↔ ひらがな ↔ ローマ字)
+#define JP_EXCL  LS(N1)       // !
+#define JP_DQT   LS(N2)       // "
+#define JP_HASH  LS(N3)       // #
+#define JP_DLLR  LS(N4)       // $
+#define JP_PRCNT LS(N5)       // %
+#define JP_AMPS  LS(N6)       // &
+#define JP_SQT   LS(N7)       // '
+#define JP_LPAR  LS(N8)       // (
+#define JP_RPAR  LS(N9)       // )
+#define JP_EQUAL LS(JP_MINUS) // =
+#define JP_TILDE LS(JP_CARET) // ~
+#define JP_PIPE  LS(JP_YEN)   // |
+#define JP_GRAVE LS(JP_AT)    // `
+#define JP_LBRC  LS(JP_LBKT)  // {
+#define JP_CAPS  LS(JP_EISU)  // Caps Lock
+#define JP_PLUS  LS(JP_SEMI)  // +
+#define JP_ASTRK LS(JP_COLON) // *
+#define JP_RBRC  LS(JP_RBKT)  // }
+#define JP_LT    LS(JP_COMMA) // <
+#define JP_RT    LS(JP_DOT)   // >
+#define JP_QMARK LS(JP_SLASH) // ?
+#define JP_UNDER LS(INT1)     // _
+
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -6,9 +52,160 @@
     combos {
         compatible = "zmk,combos";
 
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
+        to_default_layer {
+            bindings = <&to 0>;
+            key-positions = <38 41>;
+        };
+
+        left_func1 {
+            bindings = <&mo 8>;
+            key-positions = <38 37>;
+        };
+
+        left_func2 {
+            bindings = <&mo 6>;
+            key-positions = <39 38>;
+        };
+
+        right_func2 {
+            bindings = <&mo 3>;
+            key-positions = <41 40>;
+        };
+    };
+
+    behaviors {
+        encode_sensor_down_up: encode_sensor_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_SENSOR_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc ENCODER_SENSOR_UP>, <&msc ENCODER_SENSOR_DOWN>;
+
+            tap-ms = <20>;
+        };
+
+        encode_sensor_left_right: encode_sensor_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODE_SENSOR_LEFT_RIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc ENCODER_SENSOR_LEFT>, <&msc ENCODER_SENSOR_RIGHT>;
+
+            tap-ms = <20>;
+        };
+
+        func_left1: func_left1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_LEFT1";
+            #binding-cells = <0>;
+            bindings = <&lt_hold_retro 3 LANGUAGE_2>;
+            tapping-term-ms = <300>;
+        };
+
+        func_left2: func_left2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_LEFT2";
+            #binding-cells = <0>;
+            bindings = <&lt_hold_pref 4 SPACE>;
+            tapping-term-ms = <200>;
+        };
+
+        func_left3: func_left3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_LEFT3";
+            #binding-cells = <0>;
+            bindings = <&mo 5>, <&mo 6>;
+
+            tapping-term-ms = <300>;
+        };
+
+        func_right1: func_right1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_RIGHT1";
+            #binding-cells = <0>;
+            bindings = <&lt_hold_retro 4 LANG2>, <&kp LANG1>;
+
+            tapping-term-ms = <300>;
+        };
+
+        func_right2: func_right2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_RIGHT2";
+            #binding-cells = <0>;
+            bindings = <&mt_hold_retro LEFT_SHIFT LANG1>;
+            tapping-term-ms = <300>;
+        };
+
+        lt_hold_pref: lt_hold_pref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_HOLD_PREF";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+        };
+
+        mt_hold_pref: mt_hold_pref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_HOLD_PREF";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+        };
+
+        mlt_hold_pref: mlt_hold_pref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MLT_HOLD_PREF";
+            bindings = <&mo>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        td_layer_change: td_layer_change {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LAYER_CHANGE";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&to 8>;
+        };
+
+        func_right1_2: func_right1_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_RIGHT1_2";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN>;
+            tapping-term-ms = <200>;
+        };
+
+        lt_hold_retro: lt_hold_retro {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_HOLD_RETRO";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            retro-tap;
+        };
+
+        mt_hold_retro: mt_hold_retro {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_HOLD_RETRO";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            retro-tap;
+        };
+
+        func_right2_2: func_right2_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FUNC_RIGHT2_2";
+            #binding-cells = <0>;
+            bindings = <&mt_hold_retro LEFT_SHIFT INT_MUHENKAN>;
+            tapping-term-ms = <300>;
         };
     };
 
@@ -17,10 +214,10 @@
 
         layer_0 {
             bindings = <
-  &kp Q      &kp W     &kp E     &kp R      &kp T             &kp Y   &kp U   &kp I   &kp O      &kp P
-  &kp A      &kp S     &kp D     &kp F      &kp G             &kp H   &kp J   &kp K   &kp L      &kp SEMI
-  &kp Z      &kp X     &kp C     &kp V      &kp B   &trans    &trans  &kp N   &kp M   &kp COMMA  &kp DOT   &kp MINUS
-  &kp LCTRL  &kp LALT  &kp LGUI  &kp SPACE  &trans  &trans    &trans  &trans  &trans  &trans     &trans    &trans
+&kp Q      &kp W         &kp E             &kp R                   &kp T                                                                &kp Y                            &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S         &kp D             &kp F                   &kp G                  &mkp MCLK             &kp ESC                 &kp H                            &kp J  &kp K      &kp L    &lt_hold_pref 2 SEMICOLON
+&kp Z      &kp X         &kp C             &kp V                   &kp B                  &td_layer_change      &lt_hold_pref 7 LANG1   &kp N                            &kp M  &kp COMMA  &kp DOT  &lt_hold_pref 2 MINUS
+&kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt_hold_retro 3 LANG2  &lt_hold_pref 4 SPACE  &func_left3           &lt_hold_retro 4 LANG2  &mt_hold_retro LEFT_SHIFT LANG1                             &lt_hold_pref 7 JP_UNDER
             >;
         };
 
