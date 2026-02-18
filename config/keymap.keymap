@@ -43,10 +43,9 @@
 #define JP_QMARK LS(JP_SLASH) // ?
 #define JP_UNDER LS(INT1)     // _
 
-
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -214,10 +213,10 @@
 
         layer_0 {
             bindings = <
-&kp Q      &kp W         &kp E             &kp R                   &kp T                                                                &kp Y                            &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D             &kp F                   &kp G                  &mkp MCLK             &kp ESC                 &kp H                            &kp J  &kp K      &kp L    &lt_hold_pref 2 SEMICOLON
-&kp Z      &kp X         &kp C             &kp V                   &kp B                  &td_layer_change      &lt_hold_pref 7 LANG1   &kp N                            &kp M  &kp COMMA  &kp DOT  &lt_hold_pref 2 MINUS
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt_hold_retro 3 LANG2  &lt_hold_pref 4 SPACE  &func_left3           &lt_hold_retro 4 LANG2  &mt_hold_retro LEFT_SHIFT LANG1                             &lt_hold_pref 7 JP_UNDER
+  &kp Q   &kp W   &kp E   &kp R   &kp T             &kp Y   &kp U   &kp I  &kp O      &kp P
+  &kp A   &kp S   &kp D   &kp F   &kp G             &kp H   &kp J   &kp K  &kp L      &kp SEMI
+  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp A     &kp B   &kp N   &kp M  &kp COMMA  &kp DOT   &kp MINUS
+  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6    &kp N7  &kp N8                    &kp N9    &kp N0
             >;
         };
 
@@ -226,7 +225,7 @@
   &kp N1   &kp N2   &kp N3  &kp N4  &kp N5             &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
   &kp F1   &kp F2   &kp F3  &kp F4  &kp F5             &trans  &kp N4  &kp N5  &kp N6  &trans
   &kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &trans    &trans  &trans  &kp N1  &kp N2  &kp N3  &trans
-  &kp F11  &kp F12  &trans  &trans  &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans
+  &kp F11  &kp F12  &trans  &trans  &trans   &trans    &trans  &trans                  &trans  &trans
             >;
         };
 
@@ -235,7 +234,16 @@
   &kp ESC    &trans    &kp UP    &trans     &kp BSPC            &trans  &trans    &kp UP    &trans     &kp BSPC
   &kp TAB    &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET             &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
   &kp LSHFT  &trans    &trans    &trans     &trans    &trans    &trans  &trans    &trans    &trans     &trans    &trans
-  &trans     &trans    &trans    &trans     &trans    &trans    &trans  &trans    &trans    &trans     &trans    &trans
+  &trans     &trans    &trans    &trans     &trans    &trans    &trans  &trans                         &trans    &trans
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+  &kp Q    &kp W                      &kp E      &kp R         &kp T                                       &kp Y                  &kp U             &kp I                  &kp O  &kp P
+  &kp A    &kp S                      &kp D      &kp F         &kp G                                       &mkp MCLK              &kp ESC           &kp H                  &kp J  &kp K
+  &kp L    &lt_hold_pref 2 SEMICOLON  &kp Z      &kp X         &kp C             &kp V                     &kp B                  &td_layer_change  &lt_hold_pref 7 LANG1  &kp N  &kp M                   &kp COMMA
+  &kp DOT  &lt_hold_pref 2 MINUS      &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt_hold_retro 3 LANG2    &lt_hold_pref 4 SPACE  &func_left3                                     &lt_hold_retro 4 LANG2  &mt_hold_retro LEFT_SHIFT LANG1
             >;
         };
     };
