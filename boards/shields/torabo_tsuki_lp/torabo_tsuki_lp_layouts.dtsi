@@ -45,6 +45,7 @@
             , <&key_physical_attrs 100 100  930  350 (-1000)  1030   450>
             , <&key_physical_attrs 100 100 1250  325       0     0     0>
             , <&key_physical_attrs 100 100 1350  360       0     0     0>
+            ;
     };
 
     physical_layout_m: physical_layout_1 {
