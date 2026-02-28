@@ -65,11 +65,21 @@
 
         default {
             bindings = <
-&none  &none      &none     &none     &none   &none                                    &none   &none  &none      &none    &none          &none
-&none  &kp Q      &kp W     &kp E     &kp R   &kp T                                    &kp Y   &kp U  &kp I      &kp O    &kp P          &none
-&none  &kp A      &kp S     &kp D     &kp F   &kp G   &none          &none             &kp H   &kp J  &kp K      &kp L    &kp SEMI       &none
-&none  &kp Z      &kp X     &kp C     &kp V   &kp B   &kp BACKSPACE  &lt 1 LEFT_SHIFT  &kp N   &kp M  &kp COMMA  &kp DOT  &kp MINUS      &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp N4  &kp N5  &kp N5         &kp N6            &kp N7  &none  &none      &kp N9   &kp LS(UNDER)  &none
+&none  &none      &none     &none     &none         &none                                         &none           &none  &none      &none    &none          &none
+&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                         &kp Y           &kp U  &kp I      &kp O    &kp P          &none
+&none  &kp A      &kp S     &kp D     &kp F         &kp G        &none          &none             &kp H           &kp J  &kp K      &kp L    &kp SEMI       &none
+&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &kp BACKSPACE  &lt 2 LEFT_SHIFT  &kp N           &kp M  &kp COMMA  &kp DOT  &kp MINUS      &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 0 0  &lt 0 SPACE  &lt_kana 0 0   &kp N6            &kp LEFT_SHIFT  &none  &none      &kp N9   &kp LS(UNDER)  &none
+            >;
+        };
+
+        num_and_func {
+            bindings = <
+&trans  &trans   &trans   &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans     &trans
+&trans  &kp N1   &kp N2   &kp N3  &kp N4  &kp N5                   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &trans
+&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5   &trans  &trans  &trans  &kp N4  &kp N5  &kp N6  &kp COMMA  &trans
+&trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &kp N1  &kp N2  &kp N3  &kp DOT    &trans
+&trans  &kp F11  &kp F12  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans
             >;
         };
 
