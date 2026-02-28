@@ -4,12 +4,59 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    combos { compatible = "zmk,combos"; };
 
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
+    macros {
+        to_eisu: to_eisu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG2 &kp INT5>;
+            label = "TO_EISU";
+        };
+
+        to_kana: to_kana {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG1 &kp INT4>;
+            label = "TO_KANA";
+        };
+    };
+
+    behaviors {
+        lt_eisu: lt_eisu {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_EISU";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        lt_kana: lt_kana {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_KANA";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        mo_eisu: mo_eisu {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_EISU";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        mo_kana: mo_kana {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_KANA";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
     };
 
