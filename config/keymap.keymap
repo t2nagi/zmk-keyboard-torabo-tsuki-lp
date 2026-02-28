@@ -21,6 +21,13 @@
             bindings = <&kp LANG1 &kp INT4>;
             label = "TO_KANA";
         };
+
+        to_mscroll: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mo 1 &tog 2>;
+            label = "NEW_MACRO";
+        };
     };
 
     behaviors {
@@ -59,6 +66,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        lt_mscroll: lt_mscroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_MSCROLL";
+            bindings = <&to_mscroll>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -69,7 +85,7 @@
 &none  &none      &none     &none     &none         &none                                         &none           &none  &none      &none    &none          &none
 &none  &kp Q      &kp W     &kp E     &kp R         &kp T                                         &kp Y           &kp U  &kp I      &kp O    &kp P          &none
 &none  &kp A      &kp S     &kp D     &kp F         &kp G        &none          &none             &kp H           &kp J  &kp K      &kp L    &kp SEMI       &none
-&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &kp BACKSPACE  &lt 3 LEFT_SHIFT  &kp N           &kp M  &kp COMMA  &kp DOT  &kp MINUS      &none
+&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &kp BACKSPACE  &lt 4 LEFT_SHIFT  &kp N           &kp M  &kp COMMA  &kp DOT  &kp MINUS      &none
 &none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 0 0  &lt 0 SPACE  &lt_kana 0 0   &kp N6            &kp LEFT_SHIFT  &none  &none      &kp N9   &kp LS(UNDER)  &none
             >;
         };
@@ -81,6 +97,16 @@
 &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans
 &trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans
 &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans
+            >;
+        };
+
+        mouse_scroll {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
