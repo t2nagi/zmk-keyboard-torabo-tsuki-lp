@@ -22,11 +22,11 @@
             label = "TO_KANA";
         };
 
-        to_mscroll: new_macro {
+        to_mscroll: to_mscroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&mo 1 &tog 2>;
-            label = "NEW_MACRO";
+            label = "TO_MSCROLL";
         };
     };
 
@@ -82,11 +82,11 @@
 
         default {
             bindings = <
-&none  &none      &none     &none     &none         &none                                         &none           &none  &none      &none    &none          &none
-&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                         &kp Y           &kp U  &kp I      &kp O    &kp P          &none
-&none  &kp A      &kp S     &kp D     &kp F         &kp G        &none          &none             &kp H           &kp J  &kp K      &kp L    &kp SEMI       &none
-&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &kp BACKSPACE  &lt 4 LEFT_SHIFT  &kp N           &kp M  &kp COMMA  &kp DOT  &kp MINUS      &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 0 0  &lt 0 SPACE  &lt_kana 0 0   &kp N6            &kp LEFT_SHIFT  &none  &none      &kp N9   &kp LS(UNDER)  &none
+&none  &none      &none     &none     &none         &none                                         &none           &none  &none      &none    &none               &none
+&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                         &kp Y           &kp U  &kp I      &kp O    &kp P               &none
+&none  &kp A      &kp S     &kp D     &kp F         &kp G        &none          &none             &kp H           &kp J  &kp K      &kp L    &lt_mscroll 0 SEMI  &none
+&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &kp BACKSPACE  &lt 4 LEFT_SHIFT  &kp N           &kp M  &kp COMMA  &kp DOT  &kp MINUS           &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 0 0  &lt 0 SPACE  &lt_kana 0 0   &kp N6            &kp LEFT_SHIFT  &none  &none      &kp N9   &kp LS(UNDER)       &none
             >;
         };
 
