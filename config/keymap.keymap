@@ -5,7 +5,14 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        to_number {
+            bindings = <&mo 4>;
+            key-positions = <59 60>;
+        };
+    };
 
     macros {
         to_eisu: to_eisu {
