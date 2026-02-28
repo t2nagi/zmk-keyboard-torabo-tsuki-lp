@@ -186,9 +186,9 @@
         symbols {
             bindings = <
 &trans  &trans        &trans       &trans         &trans        &trans                         &trans        &trans       &trans        &trans        &trans         &trans
-&trans  &kp LS(EXCL)  &kp LS(DQT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                  &kp LS(AMPS)  &kp LS(SQT)  &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(N0)     &trans
-&trans  &trans        &kp AT_SIGN  &trans         &trans        &trans         &trans  &trans  &kp LS(LPAR)  &kp LS(LT)   &kp LBKT      &kp AT        &kp COLON      &trans
-&trans  &trans        &trans       &trans         &trans        &trans         &trans  &trans  &kp LS(RPAR)  &kp LS(GT)   &kp RBKT      &kp FSLH      &kp LS(UNDER)  &trans
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                   &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp JP_BSLH  &kp JP_CARET  &kp JP_YEN     &trans
+&trans  &trans        &kp AT_SIGN  &trans         &trans        &trans         &trans  &trans  &kp LS(NUMBER_8)  &kp LS(COMMA)     &kp JP_LBKT  &kp JP_AT     &kp JP_COLON      &trans
+&trans  &trans        &trans       &trans         &trans        &trans         &trans  &trans  &kp LS(NUMBER_9)  &kp LS(PERIOD)    &kp JP_RBKT  &kp JP_SLASH  &kp JP_UNDER  &trans
 &trans  &trans        &trans       &trans         &trans        &trans         &trans  &trans  &trans        &trans       &trans        &trans        &trans         &trans
             >;
         };
