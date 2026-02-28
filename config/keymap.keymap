@@ -41,6 +41,8 @@
 #define JP_LT    LS(JP_COMMA) // <
 #define JP_RT    LS(JP_DOT)   // >
 #define JP_QMARK LS(JP_SLASH) // ?
+#define JP_UNDER LS(INT1)     // _
+
 
 // /OS設定を日本語キーボードのまま使用するための変換定義
 
