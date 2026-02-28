@@ -55,14 +55,14 @@
     combos {
         compatible = "zmk,combos";
 
-        to_number {
-            bindings = <&mo 4>;
-            key-positions = <59 60>;
-        };
-
         to_default {
             bindings = <&to 0>;
             key-positions = <53 64>;
+        };
+
+        to_number {
+            bindings = <&mo 4>;
+            key-positions = <59 60>;
         };
 
         to_option2 {
