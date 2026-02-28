@@ -26,7 +26,7 @@
         lt_eisu: lt_eisu {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_EISU";
-            bindings = <&none>, <&none>;
+            bindings = <&mo>, <&to_eisu>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -35,25 +35,25 @@
         lt_kana: lt_kana {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_KANA";
-            bindings = <&none>, <&none>;
+            bindings = <&mo>, <&to_kana>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
-        mo_eisu: mo_eisu {
+        mt_eisu: mt_eisu {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_EISU";
-            bindings = <&none>, <&none>;
+            label = "MT_EISU";
+            bindings = <&kp>, <&to_eisu>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
-        mo_kana: mo_kana {
+        mt_kana: mt_kana {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_KANA";
-            bindings = <&none>, <&none>;
+            label = "MT_KANA";
+            bindings = <&kp>, <&to_kana>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
