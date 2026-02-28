@@ -64,6 +64,11 @@
             bindings = <&to 0>;
             key-positions = <53 64>;
         };
+
+        to_option2 {
+            bindings = <&mo 7>;
+            key-positions = <58 57>;
+        };
     };
 
     macros {
