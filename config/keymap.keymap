@@ -58,6 +58,11 @@
             bindings = <&mo 4>;
             key-positions = <59 60>;
         };
+
+        to_default {
+            bindings = <&to 0>;
+            key-positions = <53 64>;
+        };
     };
 
     macros {
@@ -73,13 +78,6 @@
             #binding-cells = <0>;
             bindings = <&kp LANG1 &kp INT4>;
             label = "TO_KANA";
-        };
-
-        to_mscroll: to_mscroll {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&mo 1 &tog 0>;
-            label = "TO_MSCROLL";
         };
     };
 
