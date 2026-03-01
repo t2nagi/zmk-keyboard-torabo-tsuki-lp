@@ -57,7 +57,7 @@
 
         to_default {
             bindings = <&to 0>;
-            key-positions = <53 64>;
+            key-positions = <44 45>;
         };
 
         to_number {
@@ -68,6 +68,11 @@
         to_option2 {
             bindings = <&mo 7>;
             key-positions = <58 57>;
+        };
+
+        kp_command {
+            bindings = <&kp LEFT_COMMAND>;
+            key-positions = <56 57>;
         };
     };
 
