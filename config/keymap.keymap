@@ -56,7 +56,7 @@
         compatible = "zmk,combos";
 
         to_default {
-            bindings = <&to 0>;
+            bindings = <&sys_reset>;
             key-positions = <44 45>;
         };
 
