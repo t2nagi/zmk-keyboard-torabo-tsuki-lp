@@ -51,9 +51,9 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&lt { flavor = "tap-unless-interrupted"; };
+&lt { flavor = "hold-preferred"; };
 
-&mt { flavor = "tap-unless-interrupted"; };
+&mt { flavor = "hold-preferred"; };
 
 / {
     combos {
@@ -104,7 +104,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
 
         lt_kana: lt_kana {
@@ -114,7 +114,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
 
         mt_eisu: mt_eisu {
@@ -124,7 +124,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
 
         mt_kana: mt_kana {
@@ -134,7 +134,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
 
         lt_retro: lt_retro {
@@ -163,11 +163,11 @@
 
         default {
             bindings = <
-&none  &none      &none     &none     &none         &none                                        &none                  &none  &none      &none    &none          &none
-&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                        &kp Y                  &kp U  &kp I      &kp O    &kp P          &none
-&none  &kp A      &kp S     &kp D     &kp F         &kp G        &none         &none             &kp H                  &kp J  &kp K      &kp L    &lt 2 SEMI     &none
-&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &mkp MB2      &lt 6 LEFT_SHIFT  &kp N                  &kp M  &kp COMMA  &kp DOT  &kp MINUS      &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 4 0  &lt 3 SPACE  &lt_kana 5 0  &lt 3 TAB         &mt_kana LEFT_SHIFT 0  &none  &none      &kp N9   &kp LS(UNDER)  &none
+&none  &none      &none     &none     &none         &none                                        &none                  &none  &none      &none    &none             &none
+&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                        &kp Y                  &kp U  &kp I      &kp O    &kp P             &none
+&none  &kp A      &kp S     &kp D     &kp F         &kp G        &none         &none             &kp H                  &kp J  &kp K      &kp L    &lt_retro 2 SEMI  &none
+&none  &kp Z      &kp X     &kp C     &kp V         &kp B        &mkp MB2      &lt 6 LEFT_SHIFT  &kp N                  &kp M  &kp COMMA  &kp DOT  &kp MINUS         &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 4 0  &lt 3 SPACE  &lt_kana 5 0  &lt 3 TAB         &mt_kana LEFT_SHIFT 0  &none  &none      &trans   &kp LS(UNDER)     &none
             >;
         };
 
