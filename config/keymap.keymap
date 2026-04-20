@@ -166,6 +166,22 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        ime_change: ime_change {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IME_CHANGE";
+            #binding-cells = <0>;
+            bindings = <&to_eisu>, <&to_kana>;
+        };
+
+        lt_ime: lt_ime {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_IME";
+            bindings = <&lt>, <&ime_change>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -173,11 +189,11 @@
 
         default {
             bindings = <
-&none  &none      &none     &none     &none            &none                                        &none           &none      &none          &none    &none          &none
-&none  &kp Q      &kp W     &kp E     &kp R            &kp T                                        &kp Y           &kp U      &kp I          &kp O    &kp P          &none
-&none  &kp A      &kp S     &kp D     &kp F            &kp G        &none         &none             &kp H           &kp J      &kp K          &kp L    &lt_tp 2 SEMI  &none
-&none  &kp Z      &kp X     &kp C     &kp V            &kp B        &mkp MB2      &lt 6 LEFT_SHIFT  &kp N           &kp M      &kp COMMA      &kp DOT  &kp MINUS      &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt 4 RC(SPACE)  &lt 3 SPACE  &lt_eisu 5 0  &lt_kana 3 0      &kp LEFT_SHIFT  &kp ENTER  &kp BACKSPACE  &trans   &kp LS(UNDER)  &none
+&none  &none      &none     &none     &none        &none                                        &none           &none      &none          &none    &none          &none
+&none  &kp Q      &kp W     &kp E     &kp R        &kp T                                        &kp Y           &kp U      &kp I          &kp O    &kp P          &none
+&none  &kp A      &kp S     &kp D     &kp F        &kp G        &none         &none             &kp H           &kp J      &kp K          &kp L    &lt_tp 2 SEMI  &none
+&none  &kp Z      &kp X     &kp C     &kp V        &kp B        &mkp MB2      &lt 6 LEFT_SHIFT  &kp N           &kp M      &kp COMMA      &kp DOT  &kp MINUS      &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_ime 4 0  &lt 3 SPACE  &lt_eisu 5 0  &lt_kana 3 0      &kp LEFT_SHIFT  &kp ENTER  &kp BACKSPACE  &trans   &kp LS(UNDER)  &none
             >;
         };
 
