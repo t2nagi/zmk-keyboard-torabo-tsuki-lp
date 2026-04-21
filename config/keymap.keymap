@@ -51,7 +51,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&lt { flavor = "hold-preferred"; };
+&lt {
+    flavor = "tap-unless-interrupted";
+    tapping-term-ms = <250>;
+};
 
 &mt { flavor = "hold-preferred"; };
 
