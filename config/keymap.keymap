@@ -182,6 +182,7 @@
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
             tapping-term-ms = <1000>;
+            quick-tap-ms = <0>;
         };
     };
 
