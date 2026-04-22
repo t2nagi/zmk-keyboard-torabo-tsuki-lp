@@ -51,7 +51,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&lt { flavor = "hold-preferred"; };
+&lt {
+    flavor = "hold-preferred";
+    quick-tap-ms = <(-1)>;
+};
 
 &mt { flavor = "hold-preferred"; };
 
@@ -167,13 +170,6 @@
             flavor = "tap-preferred";
         };
 
-        ime_change: ime_change {
-            compatible = "zmk,behavior-tap-dance";
-            label = "IME_CHANGE";
-            #binding-cells = <0>;
-            bindings = <&lt_eisu 4 0>, <&lt_kana 4 0>;
-        };
-
         lt_unless: lt_unless {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_UNLESS";
@@ -182,7 +178,8 @@
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
             tapping-term-ms = <1000>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <(-1)>;
+            require-prior-idle-ms = <(-1)>;
         };
     };
 
