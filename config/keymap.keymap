@@ -54,6 +54,7 @@
 &lt {
     flavor = "hold-preferred";
     quick-tap-ms = <(-1)>;
+    require-prior-idle-ms = <(-1)>;
 };
 
 &mt { flavor = "hold-preferred"; };
@@ -218,11 +219,11 @@
 
         options_1 {
             bindings = <
-&trans  &trans          &trans    &trans    &trans     &trans                       &trans     &trans    &trans    &trans     &trans     &trans
-&trans  &kp ESC         &trans    &kp UP    &trans     &kp BSPC                     &trans     &trans    &kp UP    &trans     &kp BSPC   &trans
-&trans  &kp TAB         &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET   &trans  &trans     &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER  &trans
-&trans  &kp LSHFT       &trans    &trans    &trans     &trans    &trans  &trans     &kp PG_DN  &kp HOME  &trans    &kp END    &trans     &trans
-&trans  &kp LEFT_SHIFT  &trans    &trans    &trans     &trans    &trans  &kp ENTER  &kp RET    &trans    &trans    &trans     &trans     &trans
+&trans  &trans          &trans    &trans    &trans     &trans                        &trans     &trans    &trans    &trans     &trans     &trans
+&trans  &kp ESC         &trans    &kp UP    &trans     &kp BSPC                      &trans     &trans    &kp UP    &trans     &kp BSPC   &trans
+&trans  &kp TAB         &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET   &trans  &trans      &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER  &trans
+&trans  &kp LSHFT       &trans    &trans    &trans     &trans    &trans  &trans      &kp PG_DN  &kp HOME  &trans    &kp END    &trans     &trans
+&trans  &kp LEFT_SHIFT  &trans    &trans    &trans     &trans    &trans  &kp DELETE  &kp RET    &trans    &trans    &trans     &trans     &trans
             >;
         };
 
