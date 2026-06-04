@@ -4,3 +4,13 @@ config SHIELD_TORABO_TSUKI_LP_LEFT
 
 config SHIELD_TORABO_TSUKI_LP_RIGHT
     def_bool $(shields_list_contains,torabo_tsuki_lp_right)
+
+# ビルドごとのBLE端末名を選ぶスイッチ（build.yaml の cmake-args から -DCONFIG_..=y で指定）
+config TORABO_KB_NAME_S
+    bool "Keyboard name: torabo-tsuki-s"
+
+config TORABO_KB_NAME_XS
+    bool "Keyboard name: torabo-tsuki-xs"
+
+config TORABO_KB_NAME_NASHI
+    bool "Keyboard name: torabo-nashi"
