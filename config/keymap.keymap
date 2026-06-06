@@ -108,7 +108,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "tap-unless-interrupted";
         };
 
         lt_kana: lt_kana {
@@ -128,7 +128,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "tap-unless-interrupted";
         };
 
         mt_kana: mt_kana {
