@@ -1,7 +1,7 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-
+#include <zmk-input-inertia/input/processor/input_inertia.dtsi>
 
 &zip_temp_layer {
     excluded-positions = < 
@@ -13,6 +13,26 @@
     >;
 
     require-prior-idle-ms = <500>;
+};
+
+&zip_inertia {
+    // 慣性が始まるまでの待ち時間 (推奨: センサーのポーリングレートの2倍以上)
+    trigger-ms = <35>;
+
+    // --- マウス移動の設定 ---
+    move-decay-factor-int = <90>;       // 減衰率 (0-100)
+    move-report-interval-ms = <35>;     // レポート送信間隔 (ms)
+    move-threshold-start = <15>;        // 慣性が発動する最小移動量 (pix/report)
+    move-threshold-stop = <1>;          // 慣性が停止する移動量 (pix/report)
+
+    // --- スクロールの設定 ---
+    scroll-decay-factor-int = <85>;    // スクロール減衰率
+    scroll-report-interval-ms = <65>;  // スクロールレポート間隔 (ms)
+    scroll-threshold-start = <2>;      // 慣性が発動する最小スクロール量 (pix/report)
+    scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
+
+    // 任意: Ctrl 押下中はスクロール慣性を停止/抑止する
+    cancel-scroll-inertia-on-ctrl;
 };
 
 &pointing_listener {
@@ -36,7 +56,7 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 1 30
             // &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-        >;
+        >, <&zip_inertia>;;
     };
 };
 
