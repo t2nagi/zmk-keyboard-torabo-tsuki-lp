@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,5 +29,11 @@ manifest:
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-input-inertia
+      remote: amgskobo
+      # ZMK v0.3 (Zephyr 3.5系) は zmk_endpoints_send_mouse_report (複数形) のみ提供。
+      # このモジュールは 2026-02-15 以降 zmk_endpoint_send_mouse_report (単数形) を呼ぶため
+      # src/zmk_endpoint_compat.c で互換シムを用意している。SHAは動作確認済みのものに固定。
+      revision: 7d4831d0422637432ad55926690b1e7000eb249d
   self:
     path: config
