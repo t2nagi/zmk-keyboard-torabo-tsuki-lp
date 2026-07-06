@@ -10,8 +10,8 @@
     // --- スクロールの設定 ---
     // 閾値は小さめ・減衰は緩めにして体感できるようにする
     scroll-decay-factor-int = <95>;    // 減衰率 (0-100)。大きいほど長く流れる
-    scroll-report-interval-ms = <5>;  // レポート送信間隔 (ms)
-    scroll-threshold-start = <1>;      // 慣性が発動する最小スクロール量 (pix/report)
+    scroll-report-interval-ms = <250>;  // レポート送信間隔 (ms)
+    scroll-threshold-start = <5>;      // 慣性が発動する最小スクロール量 (pix/report)
     scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
 
     // Ctrl押下中(ズーム操作等)はスクロール慣性を停止/抑止する
@@ -50,7 +50,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 1 50
-            // &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >, <&zip_inertia>;
     };
 };
