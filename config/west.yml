@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,5 +31,8 @@ manifest:
       revision: main
     - name: zmk-driver-kscan-4-direction-switch
       remote: sekigon-gonnoc
+    - name: zmk-input-inertia
+      remote: amgskobo
+      revision: main
   self:
     path: config
