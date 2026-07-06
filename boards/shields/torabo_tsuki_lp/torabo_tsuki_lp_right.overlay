@@ -8,7 +8,6 @@
     trigger-ms = <35>;
 
     // --- スクロールの設定 ---
-    // zip_scroll_scaler 1 40 で縮小された後の値がここに渡ってくるため、
     // 閾値は小さめ・減衰は緩めにして体感できるようにする
     scroll-decay-factor-int = <92>;    // 減衰率 (0-100)。大きいほど長く流れる
     scroll-report-interval-ms = <50>;  // レポート送信間隔 (ms)
@@ -50,7 +49,7 @@
         layers = <2>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 40
+            &zip_scroll_scaler 1 30
             // &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >, <&zip_inertia>;
     };
