@@ -5,7 +5,7 @@
 
 &zip_inertia {
     // 慣性が始まるまでの待ち時間 (推奨: センサーのポーリングレートの2倍以上)
-    trigger-ms = <35>;
+    trigger-ms = <70>; // ms
 
     // --- スクロールの設定 ---
     // 閾値は小さめ・減衰は緩めにして体感できるようにする
@@ -41,7 +41,7 @@
         layers = <3>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 10
+            &zip_xy_scaler 1 8
         >;        
     };
 
@@ -51,7 +51,7 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 1 50
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-        >; // , <&zip_inertia>;
+        >, <&zip_inertia>;
     };
 };
 
