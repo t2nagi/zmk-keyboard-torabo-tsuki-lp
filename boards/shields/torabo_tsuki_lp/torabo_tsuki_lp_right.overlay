@@ -40,15 +40,23 @@
         layers = <3>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 5
+            &zip_xy_scaler 1 2
         >;        
     };
 
+    symbols {
+        layers = <5>;
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler 2 1
+        >;        
+    };
+    
     scroll {
         layers = <2>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 75
+            &zip_scroll_scaler 1 50
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >, <&zip_inertia>;
     };
