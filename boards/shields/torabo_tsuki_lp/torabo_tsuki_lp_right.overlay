@@ -5,16 +5,15 @@
 
 &zip_inertia {
     // 慣性が始まるまでの待ち時間 (推奨: センサーのポーリングレートの2倍以上)
-    trigger-ms = <70>; // ms
+    trigger-ms = <35>; // ms
 
     // --- スクロールの設定 ---
-    // 閾値は小さめ・減衰は緩めにして体感できるようにする
-    scroll-decay-factor-int = <99>;    // 減衰率 (0-100)。大きいほど長く流れる
-    scroll-report-interval-ms = <10>;  // レポート送信間隔 (ms)
-    scroll-threshold-start = <1>;      // 慣性が発動する最小スクロール量 (pix/report)
+    scroll-decay-factor-int = <85>;    // スクロール減衰率
+    scroll-report-interval-ms = <65>;  // スクロールレポート間隔 (ms)
+    scroll-threshold-start = <2>;      // 慣性が発動する最小スクロール量 (pix/report)
     scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
 
-    // Ctrl押下中(ズーム操作等)はスクロール慣性を停止/抑止する
+    // 任意: Ctrl 押下中はスクロール慣性を停止/抑止する
     cancel-scroll-inertia-on-ctrl;
 };
 
@@ -41,7 +40,7 @@
         layers = <3>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 8
+            &zip_xy_scaler 1 5
         >;        
     };
 
@@ -49,7 +48,7 @@
         layers = <2>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 50
+            &zip_scroll_scaler 1 75
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >, <&zip_inertia>;
     };
