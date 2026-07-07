@@ -8,8 +8,8 @@
     trigger-ms = <35>; // ms
 
     // --- スクロールの設定 ---
-    scroll-decay-factor-int = <85>;    // スクロール減衰率
-    scroll-report-interval-ms = <65>;  // スクロールレポート間隔 (ms)
+    scroll-decay-factor-int = <95>;    // スクロール減衰率
+    scroll-report-interval-ms = <100>;  // スクロールレポート間隔 (ms)
     scroll-threshold-start = <2>;      // 慣性が発動する最小スクロール量 (pix/report)
     scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
 
