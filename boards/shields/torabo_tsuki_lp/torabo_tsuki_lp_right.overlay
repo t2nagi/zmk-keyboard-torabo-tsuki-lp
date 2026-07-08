@@ -9,7 +9,7 @@
 
     // --- スクロールの設定 ---
     scroll-decay-factor-int = <95>;    // スクロール減衰率
-    scroll-report-interval-ms = <20>;  // スクロールレポート間隔 (ms)
+    scroll-report-interval-ms = <15>;  // スクロールレポート間隔 (ms)
     scroll-threshold-start = <1>;      // 慣性が発動する最小スクロール量 (pix/report)
     scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
 
@@ -33,14 +33,14 @@
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         &zip_temp_layer 1 1000
-        &zip_xy_scaler 1 1
+        &zip_xy_scaler 4 3
     >;
 
     options_1 {
         layers = <3>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 4 3
+            &zip_xy_scaler 2 1
         >;        
     };
 
@@ -48,7 +48,7 @@
         layers = <5>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 3 4
+            &zip_xy_scaler 1 2
         >;        
     };
     
@@ -56,7 +56,7 @@
         layers = <2>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 15
+            &zip_scroll_scaler 1 20
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >, <&zip_inertia>;
     };
