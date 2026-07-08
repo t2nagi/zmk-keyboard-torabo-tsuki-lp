@@ -1,21 +1,6 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <zmk-input-inertia/input/processor/input_inertia.dtsi>
-
-&zip_inertia {
-    // 慣性が始まるまでの待ち時間 (推奨: センサーのポーリングレートの2倍以上)
-    trigger-ms = <35>; // ms
-
-    // --- スクロールの設定 ---
-    scroll-decay-factor-int = <95>;    // スクロール減衰率
-    scroll-report-interval-ms = <15>;  // スクロールレポート間隔 (ms)
-    scroll-threshold-start = <0>;      // TEMP診断用: 片方向で慣性が効かない原因切り分けのため一時的に0に (通常は1)
-    scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
-
-    // 任意: Ctrl 押下中はスクロール慣性を停止/抑止する
-    cancel-scroll-inertia-on-ctrl;
-};
 
 &zip_temp_layer {
     excluded-positions = < 
@@ -58,7 +43,7 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 1 20
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-        >, <&zip_inertia>;
+        >;
     };
 };
 
