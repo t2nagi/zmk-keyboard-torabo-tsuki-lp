@@ -216,7 +216,7 @@
 &none  &none      &none     &none     &none         &none                                                  &none                  &none         &none              &none    &none          &none
 &none  &kp Q      &kp W     &kp E     &kp R         &kp T                                                  &kp Y                  &kp U         &kp I              &kp O    &kp P          &none
 &none  &kp A      &kp S     &kp D     &kp F         &kp G           &none                    &none         &kp H                  &kp J         &kp K              &kp L    &lt_hp 2 SEMI  &none
-&none  &kp Z      &kp X     &kp C     &kp V         &kp B           &kp LANG_ZENKAKUHANKAKU  &lt_eisu 6 0  &kp N                  &kp M         &kp COMMA          &kp DOT  &kp MINUS      &none
+&none  &kp Z      &kp X     &kp C     &kp V         &kp B           &kp JP_ZKHK              &lt_eisu 6 0  &kp N                  &kp M         &kp COMMA          &kp DOT  &kp MINUS      &none
 &none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 4 0  &lt_hp 3 SPACE  &lt_eisu 5 0             &lt_kana 3 0  &mt_kana LEFT_SHIFT 0  &lt_eisu 4 0  &kp RIGHT_COMMAND  &trans   &kp LS(UNDER)  &none
             >;
         };
