@@ -9,21 +9,21 @@ include:
 #    artifact-name: torabo_tsuki_lp_right_peripheral
   - board: bmp_boost
     shield: torabo_tsuki_lp_left
-    snippet: "studio-rpc-usb-uart input-trackpad-mini input-split"
+    snippet: "studio-rpc-usb-uart"
     artifact-name: torabo_tsuki_lp_left_peripheral
   - board: bmp_boost
     shield: torabo_tsuki_lp_right
-    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener input-split-listener"
+    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener"
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME='"torabo-tsuki-s"'
     artifact-name: torabo_tsuki_lp_right_central_tsuki-s
   - board: bmp_boost
     shield: torabo_tsuki_lp_right
-    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener input-split-listener"
+    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener"
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME='"torabo-tsuki-xs"'
     artifact-name: torabo_tsuki_lp_right_central_tsuki-xs
   - board: bmp_boost
     shield: torabo_tsuki_lp_right
-    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener input-split-listener"
+    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener"
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME='"torabo-nashi"'
     artifact-name: torabo_tsuki_lp_right_central_nashi
 #  - board: bmp_boost
