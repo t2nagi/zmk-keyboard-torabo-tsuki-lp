@@ -213,9 +213,9 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
-            quick-tap-ms = <150>;
-            tapping-term-ms = <250>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <250>;
+            tapping-term-ms = <150>;
         };
 
         func_R2: func_R2 {
