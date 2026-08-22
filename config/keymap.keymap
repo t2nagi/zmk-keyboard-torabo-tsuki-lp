@@ -206,6 +206,28 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <250>;
         };
+
+        func_L2: func_L2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FUNC_L2";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            quick-tap-ms = <150>;
+            tapping-term-ms = <250>;
+        };
+
+        func_R2: func_R2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FUNC_R2";
+            bindings = <&kp>, <&lt_kana>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <150>;
+            tapping-term-ms = <175>;
+        };
     };
 
     keymap {
@@ -213,11 +235,11 @@
 
         default {
             bindings = <
-&none  &none      &none     &none     &none         &none                                                  &none                  &none         &none              &none    &none          &none
-&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                                  &kp Y                  &kp U         &kp I              &kp O    &kp P          &none
-&none  &kp A      &kp S     &kp D     &kp F         &kp G           &none                    &none         &kp H                  &kp J         &kp K              &kp L    &lt_hp 2 SEMI  &none
-&none  &kp Z      &kp X     &kp C     &kp V         &kp B           &kp JP_ZKHK              &lt_eisu 6 0  &kp N                  &kp M         &kp COMMA          &kp DOT  &kp MINUS      &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 4 0  &lt_hp 3 SPACE  &lt_eisu 5 0             &lt_kana 3 0  &mt_kana LEFT_SHIFT 0  &lt_eisu 4 0  &kp RIGHT_COMMAND  &trans   &kp LS(UNDER)  &none
+&none  &none      &none     &none     &none         &none                                         &none                  &none         &none              &none    &none          &none
+&none  &kp Q      &kp W     &kp E     &kp R         &kp T                                         &kp Y                  &kp U         &kp I              &kp O    &kp P          &none
+&none  &kp A      &kp S     &kp D     &kp F         &kp G             &none         &none         &kp H                  &kp J         &kp K              &kp L    &lt_hp 2 SEMI  &none
+&none  &kp Z      &kp X     &kp C     &kp V         &kp B             &kp JP_ZKHK   &lt_eisu 6 0  &kp N                  &kp M         &kp COMMA          &kp DOT  &kp MINUS      &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &lt_eisu 4 0  &func_L2 3 SPACE  &lt_eisu 5 0  &lt_kana 3 0  &mt_kana LEFT_SHIFT 0  &lt_eisu 4 0  &kp RIGHT_COMMAND  &trans   &kp LS(UNDER)  &none
             >;
         };
 
