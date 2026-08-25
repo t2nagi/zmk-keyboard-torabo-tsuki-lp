@@ -63,7 +63,7 @@
     combos {
         compatible = "zmk,combos";
 
-        to_default {
+        sys_reset {
             bindings = <&sys_reset>;
             key-positions = <53 64>;
         };
