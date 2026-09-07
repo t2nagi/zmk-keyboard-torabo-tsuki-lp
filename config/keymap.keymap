@@ -318,7 +318,7 @@
 &trans  &trans  &trans     &trans             &trans          &trans                  &trans             &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans     &kp LG(LS(N3))     &kp LG(LS(N4))  &trans                  &kt C_VOLUME_UP    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LG(S)  &kp LG(BACKSPACE)  &trans          &trans  &trans  &trans  &kt C_VOLUME_DOWN  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &kp LG(C)          &kp LG(V)       &trans  &trans  &trans  &kt LC(K_MUTE)     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &kp LG(C)          &kp LG(V)       &trans  &trans  &trans  &kt K_MUTE         &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans     &trans             &trans          &trans  &trans  &trans  &trans             &trans  &trans  &trans  &trans  &trans
             >;
         };
