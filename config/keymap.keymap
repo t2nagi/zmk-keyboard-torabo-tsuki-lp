@@ -59,10 +59,6 @@
 
 &mt { flavor = "hold-preferred"; };
 
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-#include <behaviors/hires_dial.dtsi>
-#endif
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -201,13 +197,13 @@
             quick-tap-ms = <250>;
         };
 
-        mt_ba: mt_ba {
+        mt_hp: mt_hp {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_BA";
+            label = "MT_HP";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <250>;
         };
@@ -259,20 +255,20 @@
 
         mouse {
             bindings = <
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans  &trans              &trans         &trans         &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans  &kp LC(LEFT)        &kp LC(UP)     &kp LC(RIGHT)  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1            &mkp MB2       &mkp MB3       &trans  &trans
-&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans         &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &trans              &trans         &trans         &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &kp LC(LEFT)        &kp LC(UP)     &kp LC(RIGHT)  &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp MB1            &mkp MB2       &mkp MB3       &trans  &trans
+&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans         &trans  &trans
 &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans              &trans         &trans         &trans  &trans
             >;
         };
 
         mouse_scroll {
             bindings = <
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans  &trans              &trans         &trans         &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans  &kp LC(LEFT)        &kp LC(UP)     &kp LC(RIGHT)  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1            &mkp MB2       &mkp MB3       &trans  &trans
-&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans         &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &trans              &trans         &trans         &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &kp LC(LEFT)        &kp LC(UP)     &kp LC(RIGHT)  &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp MB1            &mkp MB2       &mkp MB3       &trans  &trans
+&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans         &trans  &trans
 &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans              &trans         &trans         &trans  &trans
             >;
         };
@@ -289,11 +285,11 @@
 
         num_and_func {
             bindings = <
-&trans  &trans   &trans   &trans  &trans  &trans                   &trans     &trans  &trans  &trans  &trans         &trans
-&trans  &kp N1   &kp N2   &kp N3  &kp N4  &kp N5                   &kp N6     &kp N7  &kp N8  &kp N9  &kp N0         &trans
-&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5   &trans  &trans  &kp COMMA  &kp N4  &kp N5  &kp N6  &kp ENTER      &trans
-&trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &trans  &trans  &kp DOT    &kp N1  &kp N2  &kp N3  &kp BACKSPACE  &trans
-&trans  &kp F11  &kp F12  &trans  &trans  &trans   &trans  &trans  &trans     &trans  &trans  &trans  &trans         &trans
+&trans  &trans                &trans   &trans  &trans  &trans                   &trans     &trans  &trans  &trans  &trans         &trans
+&trans  &kp N1                &kp N2   &kp N3  &kp N4  &kp N5                   &kp N6     &kp N7  &kp N8  &kp N9  &kp N0         &trans
+&trans  &kp F1                &kp F2   &kp F3  &kp F4  &kp F5   &trans  &trans  &kp COMMA  &kp N4  &kp N5  &kp N6  &kp ENTER      &trans
+&trans  &mt_hp LEFT_SHIFT F6  &kp F7   &kp F8  &kp F9  &kp F10  &trans  &trans  &kp DOT    &kp N1  &kp N2  &kp N3  &kp BACKSPACE  &trans
+&trans  &kp F11               &kp F12  &trans  &trans  &trans   &trans  &trans  &trans     &trans  &trans  &trans  &trans         &trans
             >;
         };
 
