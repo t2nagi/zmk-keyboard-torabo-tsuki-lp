@@ -59,6 +59,10 @@
 
 &mt { flavor = "hold-preferred"; };
 
+#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+#include <behaviors/hires_dial.dtsi>
+#endif
+
 / {
     combos {
         compatible = "zmk,combos";
