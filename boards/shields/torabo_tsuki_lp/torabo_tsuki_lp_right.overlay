@@ -9,7 +9,7 @@
     excluded-positions = < 
         // https://zmk-physical-layout-converter.streamlit.app/
            19 20 21
-           33 34 35
+           33 34 35 36
         39 47 48
            60
     >;

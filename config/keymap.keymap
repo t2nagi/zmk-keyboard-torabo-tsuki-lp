@@ -255,11 +255,11 @@
 
         mouse {
             bindings = <
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &trans              &trans         &trans         &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &kp LC(LEFT)        &kp LC(UP)     &kp LC(RIGHT)  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp MB1            &mkp MB2       &mkp MB3       &trans  &trans
-&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans         &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans              &trans         &trans         &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &trans              &trans         &trans         &trans           &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans          &kp LC(LEFT)        &kp LC(UP)     &kp LC(RIGHT)  &trans           &trans
+&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp MB1            &mkp MB2       &mkp MB3       &trans           &trans
+&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans         &kp RIGHT_SHIFT  &trans
+&trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans              &trans         &trans         &trans           &trans
             >;
         };
 
@@ -275,11 +275,11 @@
 
         options_1 {
             bindings = <
-&trans  &trans            &trans    &trans    &trans     &trans                          &trans     &trans    &trans    &trans     &trans      &trans
-&trans  &kp ESC           &trans    &kp UP    &trans     &kp BSPC                        &kt ESC    &trans    &kp UP    &trans     &kp BSPC    &trans
-&trans  &kp TAB           &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET     &trans  &trans      &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER   &trans
-&trans  &kp LSHFT         &trans    &trans    &trans     &kp DELETE  &trans  &trans      &kp PG_DN  &kp HOME  &trans    &kp END    &kp DELETE  &trans
-&trans  &kp LEFT_COMMAND  &trans    &trans    &trans     &trans      &trans  &kp DELETE  &kp RET    &trans    &trans    &trans     &trans      &trans
+&trans  &trans            &trans    &trans    &trans     &trans                      &trans     &trans    &trans    &trans     &trans      &trans
+&trans  &kp ESC           &trans    &kp UP    &trans     &kp BSPC                    &kp ESC    &trans    &kp UP    &trans     &kp BSPC    &trans
+&trans  &kp TAB           &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET     &trans  &trans  &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER   &trans
+&trans  &kp LSHFT         &trans    &trans    &trans     &kp DELETE  &trans  &trans  &kp PG_DN  &kp HOME  &trans    &kp END    &kp DELETE  &trans
+&trans  &kp LEFT_COMMAND  &trans    &trans    &trans     &trans      &trans  &trans  &trans     &trans    &trans    &trans     &trans      &trans
             >;
         };
 
@@ -316,9 +316,9 @@
         optons_2 {
             bindings = <
 &trans  &trans  &trans     &trans             &trans          &trans                  &trans             &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &kp LG(LS(N3))     &kp LG(LS(N4))  &trans                  &kt C_VOLUME_UP    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(S)  &kp LG(BACKSPACE)  &trans          &trans  &trans  &trans  &kt C_VOLUME_DOWN  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &kp LG(C)          &kp LG(V)       &trans  &trans  &trans  &kt K_MUTE         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &kp LG(LS(N3))     &kp LG(LS(N4))  &trans                  &kp C_VOLUME_UP    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(S)  &kp LG(BACKSPACE)  &trans          &trans  &trans  &trans  &kp C_VOLUME_DOWN  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &kp LG(C)          &kp LG(V)       &trans  &trans  &trans  &kp C_MUTE         &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans     &trans             &trans          &trans  &trans  &trans  &trans             &trans  &trans  &trans  &trans  &trans
             >;
         };
