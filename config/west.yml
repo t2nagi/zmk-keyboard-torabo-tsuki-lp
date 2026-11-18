@@ -27,5 +27,9 @@ manifest:
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-driver-kscan-4-direction-switch
+      remote: sekigon-gonnoc
+    - name: zmk-driver-hires-dial
+      remote: sekigon-gonnoc
   self:
     path: config
