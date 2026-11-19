@@ -249,7 +249,7 @@
 &none  &kp Q      &kp W     &kp E     &kp R         &kp T                                         &kp Y                  &kp U         &kp I              &kp O    &kp P          &none
 &none  &kp A      &kp S     &kp D     &kp F         &kp G             &none         &none         &kp H                  &kp J         &kp K              &kp L    &lt_hp 2 SEMI  &none
 &none  &kp Z      &kp X     &kp C     &kp V         &kp B             &kp JP_ZKHK   &lt_eisu 6 0  &kp N                  &kp M         &kp COMMA          &kp DOT  &kp SLASH      &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &func_L1 4 0  &func_L2 3 SPACE  &lt_hp 5 ESC  &lt_kana 3 0  &mt_kana LEFT_SHIFT 0  &func_L1 4 0  &kp RIGHT_COMMAND  &trans   &kp LS(UNDER)  &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &func_L1 4 0  &func_L2 3 SPACE  &lt_hp 5 ESC  &lt_kana 3 0  &mt_kana LEFT_SHIFT 0  &func_L1 4 0  &kp RIGHT_COMMAND  &trans   &kp JP_UNDER   &none
             >;
         };
 
@@ -295,11 +295,11 @@
 
         symbols {
             bindings = <
-&trans  &trans            &trans            &trans            &trans            &trans                            &trans            &trans            &trans         &trans     &trans             &trans
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                  &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp MINUS      &kp CARET  &kp INT_YEN        &trans
-&trans  &trans            &kp AT_SIGN       &trans            &trans            &trans            &trans  &trans  &trans            &trans            &kp BACKSLASH  &kp JP_AT  &kp LEFT_BRACKET   &trans
-&trans  &kp LEFT_SHIFT    &trans            &trans            &trans            &trans            &trans  &trans  &trans            &trans            &kp SEMICOLON  &kp COLON  &kp RIGHT_BRACKET  &trans
-&trans  &trans            &trans            &trans            &trans            &trans            &none   &trans  &trans            &trans            &trans         &trans     &trans             &trans
+&trans  &trans            &trans            &trans            &trans            &trans                            &trans            &trans            &trans        &trans        &trans       &trans
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                  &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp JP_MINUS  &kp JP_CARET  &kp JP_YEN   &trans
+&trans  &trans            &kp JP_AT         &trans            &trans            &trans            &trans  &trans  &trans            &trans            &kp JP_BSLH   &kp JP_AT     &kp JP_LBKT  &trans
+&trans  &kp LEFT_SHIFT    &trans            &trans            &trans            &trans            &trans  &trans  &trans            &trans            &kp JP_SEMI   &kp JP_COLON  &kp JP_RBKT  &trans
+&trans  &trans            &trans            &trans            &trans            &trans            &none   &trans  &trans            &trans            &trans        &trans        &trans       &trans
             >;
         };
 
