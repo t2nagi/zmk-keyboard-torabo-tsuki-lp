@@ -5,21 +5,28 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&zip_temp_layer {
-    excluded-positions = < 
-        // https://zmk-physical-layout-converter.streamlit.app/
-           19 20 21
-           33 34 35 36
-        39 47 48
-    >;
+/ {
+    // zip_temp_layer の改良版 (src/input_processor_temp_layer_keep.c)
+    // excluded-positions のキー押下中はレイヤーを維持し、離した時点からタイムアウトを再計測する
+    zip_temp_layer_keep: zip_temp_layer_keep {
+        compatible = "zmk,input-processor-temp-layer-keep";
+        #input-processor-cells = <2>;
 
-    require-prior-idle-ms = <500>;
+        excluded-positions = <
+            // https://zmk-physical-layout-converter.streamlit.app/
+               19 20 21
+               33 34 35 36
+            39 47 48
+        >;
+
+        require-prior-idle-ms = <500>;
+    };
 };
 
 &pointing_listener {
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-        &zip_temp_layer 1 1000
+        &zip_temp_layer_keep 1 1000
     >;
 
     options_1 {
